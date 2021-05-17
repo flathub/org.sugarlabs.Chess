@@ -1,9 +1,9 @@
 {
     "app-id": "org.sugarlabs.Chess",
     "base": "org.sugarlabs.BaseApp",
-    "base-version": "20.04",
+    "base-version": "21.04",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.36",
+    "runtime-version": "40",
     "sdk": "org.gnome.Sdk",
     "separate-locales": false,
     "command": "sugarapp",
@@ -19,6 +19,7 @@
         {
             "name": "gnuchess",
             "build-options": {
+                "ldflags": "-Wl,--allow-multiple-definition",
                 "arch": {
                     "aarch64": {
                         "config-opts": [
@@ -44,9 +45,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://github.com/tchx84/sugarchess.git",
-                    "branch": "master",
-                    "commit": "4501293b6b897d3267f0840a9801131d09572619"
+                    "url": "https://github.com/sugarlabs/sugarchess.git",
+                    "commit": "772d1ab8ea5b613d02818649ff0a8e86d066c145"
                 },
                 {
                     "type": "patch",
@@ -55,10 +55,6 @@
                 {
                     "type": "patch",
                     "path": "chess-fix-bin.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "chess-fix-clipboard.patch"
                 },
                 {
                     "type": "patch",
