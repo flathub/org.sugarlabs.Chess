@@ -46,11 +46,20 @@
                 {
                     "type": "git",
                     "url": "https://github.com/sugarlabs/sugarchess.git",
-                    "commit": "772d1ab8ea5b613d02818649ff0a8e86d066c145"
+                    "tag": "v18",
+                    "commit": "4501293b6b897d3267f0840a9801131d09572619",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^v([\\d.]+)$"
+                    }
                 },
                 {
                     "type": "patch",
                     "path": "chess-port.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "chess-fix-clip.patch"
                 },
                 {
                     "type": "patch",
