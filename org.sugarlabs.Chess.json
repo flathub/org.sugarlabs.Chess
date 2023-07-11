@@ -32,7 +32,14 @@
                 {
                     "type": "archive",
                     "url": "http://ftp.gnu.org/gnu/chess/gnuchess-5.08.tar.gz",
-                    "sha256": "c4e49e0dec210f5d131a02ff89588b482787cd702a08456791ba9100b4c6ffc0"
+                    "sha256": "c4e49e0dec210f5d131a02ff89588b482787cd702a08456791ba9100b4c6ffc0",
+                    "x-checker-data": {
+                        "type": "html",
+                        "url": "http://ftp.gnu.org/gnu/chess/",
+                        "versions": {"<": "6.0.0"},
+                        "pattern": "<a href=\"(gnuchess-([\\d\\.]+\\d).tar.gz)\">"
+
+                    }
                 }
             ]
         },
