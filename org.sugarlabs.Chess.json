@@ -1,9 +1,9 @@
 {
     "app-id": "org.sugarlabs.Chess",
     "base": "org.sugarlabs.BaseApp",
-    "base-version": "22.06",
+    "base-version": "23.06",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "42",
+    "runtime-version": "44",
     "sdk": "org.gnome.Sdk",
     "separate-locales": false,
     "command": "sugarapp",
@@ -32,7 +32,14 @@
                 {
                     "type": "archive",
                     "url": "http://ftp.gnu.org/gnu/chess/gnuchess-5.08.tar.gz",
-                    "sha256": "c4e49e0dec210f5d131a02ff89588b482787cd702a08456791ba9100b4c6ffc0"
+                    "sha256": "c4e49e0dec210f5d131a02ff89588b482787cd702a08456791ba9100b4c6ffc0",
+                    "x-checker-data": {
+                        "type": "html",
+                        "url": "http://ftp.gnu.org/gnu/chess/",
+                        "versions": {"<": "6.0.0"},
+                        "pattern": "<a href=\"(gnuchess-([\\d\\.]+\\d).tar.gz)\">"
+
+                    }
                 }
             ]
         },
@@ -46,11 +53,20 @@
                 {
                     "type": "git",
                     "url": "https://github.com/sugarlabs/sugarchess.git",
-                    "commit": "772d1ab8ea5b613d02818649ff0a8e86d066c145"
+                    "tag": "v18",
+                    "commit": "4501293b6b897d3267f0840a9801131d09572619",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^v([\\d.]+)$"
+                    }
                 },
                 {
                     "type": "patch",
                     "path": "chess-port.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "chess-fix-clip.patch"
                 },
                 {
                     "type": "patch",
