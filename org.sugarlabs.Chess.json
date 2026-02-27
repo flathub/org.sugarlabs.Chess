@@ -1,9 +1,9 @@
 {
     "app-id": "org.sugarlabs.Chess",
     "base": "org.sugarlabs.BaseApp",
-    "base-version": "24.04",
+    "base-version": "master",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "46",
+    "runtime-version": "50beta",
     "sdk": "org.gnome.Sdk",
     "separate-locales": false,
     "command": "sugarapp",
@@ -15,11 +15,15 @@
         "--env=SUGAR_BUNDLE_ID=org.sugarlabs.Chess",
         "--env=SUGAR_BUNDLE_PATH=/app/share/sugar/activities/SugarChess.activity"
     ],
+    "cleanup-commands": [
+        "rm -rf /app/share/gir-1.0"
+    ],
     "modules": [
         {
             "name": "gnuchess",
             "build-options": {
                 "ldflags": "-Wl,--allow-multiple-definition",
+                "cflags": "-Wno-error=implicit-function-declaration",
                 "arch": {
                     "aarch64": {
                         "config-opts": [
